@@ -1,4 +1,13 @@
-# ExtremeTicTacToe
+# Extreme Tic Tac Toe
+
+2022/07/29
+This is a project I made in July 2022. It took me a bit over a week to get it working.
+
+Instructions on how to play the game can be found in the game itself.
+
+I will be making refinements to this application; I'm going to update the rules and add some images to use instead of changing element background colours. The original copy (the 1.0 if you will) can be found in the branch "ettt-1.0".
+
+# Helpful Google Boiler About Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.0.
 
