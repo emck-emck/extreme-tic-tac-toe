@@ -1,0 +1,15 @@
+.allContainer {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    height: fit-content;
+    margin: 0 auto;
+    width: fit-content;
+  }
+  
+  body {
+    margin-left: 0;
+    padding: 0;
+  }

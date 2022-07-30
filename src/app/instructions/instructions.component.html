@@ -1,0 +1,76 @@
+<div class="instructionsMenuWrapper">
+    <div class="instructionsWrapper">
+      <p class="iTitle">Instructions</p>
+      <div class="iWrapper">
+        <p class="iSubtitle">Overview</p>
+        <p class="instructions">
+          The mechanics of this game are similar to the original Tic-Tac-Toe.
+          Players take turns placing "X's" or "O's" (pieces) on the board with the
+          objective of placing three of those pieces in a consecutive line, either
+          horizontally, vertically, or diagonally.
+        </p>
+        <p class="instructions">
+          The board contains 9 Tic-Tac-Toe boards inside a grid which forms a
+          larger Tic-Tac-Toe board.
+        </p>
+        <br />
+      </div>
+      <div class="iWrapper">
+        <p class="iSubtitle">Placing pieces</p>
+        <p class="instructions">
+          The first move of the game can be on any square. Every other move is
+          dictated by where the player's opponent placed their piece.
+        </p>
+        <p class="instructions">
+          A player must play in the quadrant that corresponds to the square in
+          which their opponent played on their last move.
+        </p>
+        <br />
+        <img
+          class="iImg"
+          src="https://upload.wikimedia.org/wikipedia/commons/3/36/Ultimate_tic-tac-toe_forced_move.png"
+        />
+        <br /><br />
+      </div>
+      <div class="iWrapper">
+        <p class="iSubtitle">Hung boards</p>
+        <p class="instructions">
+          It is possible that a quadrant "navigated to" has no available squares
+          to play in (which would hang the game). In such a case, a new quadrant
+          with available squares is selected.
+        </p>
+        <p class="instructions">
+          The quadrant selected to fix a hung board is always the top-left
+          quadrant (if it has no empty squares either the one to the right of it
+          is selected).
+        </p>
+        <br />
+      </div>
+      <div class="iWrapper">
+        <p class="iSubtitle">Winning quadrants</p>
+        <p class="instructions">
+          Once a player has successfully won (gotten three-in-a-row) in a
+          quadrant, the quadrant is used strictly for navigation purposes and
+          cannot be re-won.
+        </p>
+        <br />
+      </div>
+      <div class="iWrapper">
+        <p class="iSubtitle">How to win</p>
+        <p class="instructions">
+          A player's end goal in this game is to win 3 of the smaller games in
+          order to form a consecutive line of won games, as seen below.
+        </p>
+        <img
+          class="iImg"
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Ultimate_tic-tac-toe_X_victory.png"
+        />
+        <br />
+        <br />
+      </div>
+    </div>
+    <div class="buttonWrapper">
+      <button (click)="handleBackToMenuClick()">Back to menu</button>
+    </div>
+  </div>
+  

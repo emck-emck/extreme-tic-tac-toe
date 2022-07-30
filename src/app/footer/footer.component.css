@@ -1,0 +1,11 @@
+.footerContainer {
+    background-color: gray;
+    border-color: black;
+    border-style: none solid solid solid;
+    text-align: center;
+  }
+  .btn{
+    background-color: gray;
+    font-weight: bold;
+    width: 50%;
+  }

@@ -1,0 +1,7 @@
+<div
+  class="square"
+  [class.p1Play]="p1Play"
+  [class.p2Play]="p2Play || computerPlay"
+  [class.empty]="!(p1Play || p2Play)"
+  (click)="handleSquareClick()"
+></div>
