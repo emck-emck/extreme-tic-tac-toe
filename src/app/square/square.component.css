@@ -5,10 +5,12 @@
   }
   
   .p1Play {
-    background-color: lightcoral;
+    background-image: url('../../assets/img/x_square.png');
+    background-size: cover;
   }
   
   .p2Play {
-    background-color: turquoise;
+    background-image: url('../../assets/img/o_square.png');
+    background-size: cover;
   }
   

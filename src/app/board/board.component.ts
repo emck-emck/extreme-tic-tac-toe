@@ -3,6 +3,7 @@
 */
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { GameCommObj } from '../game-comm-obj.interface';
+import { ComputerService } from '../computer/computer.service';
  @Component({
   selector: 'game-board',
   templateUrl: './board.component.html',
@@ -33,6 +34,8 @@ export class BoardComponent {
 
   tttBoardsInit: number[];
 
+  computer: ComputerService;
+
   /**
    * CONSTRUCTOR
    * Board initialization goes here
@@ -53,6 +56,9 @@ export class BoardComponent {
         this.boardState[i][j] = 0;
       }
     }
+
+    // Initialize Computer
+    this.computer = new ComputerService();
   }
 
   /**
@@ -258,7 +264,7 @@ export class BoardComponent {
     var headerMsg: string;
     var stateFlag: number = 1;
 
-    cMove = this.computerMove(this.boardState[this.activeBoard]);
+    cMove = this.computer.computerMove(this.boardState[this.activeBoard]);
 
     // Manually create computer JSON
     cObj['sid'] = cMove;
