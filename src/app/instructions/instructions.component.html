@@ -11,8 +11,10 @@
         </p>
         <p class="instructions">
           The board contains 9 Tic-Tac-Toe boards inside a grid which forms a
-          larger Tic-Tac-Toe board.
+          larger Tic-Tac-Toe board (as seen below).
         </p>
+        <br />
+        <img class="iImg" src="../../assets/img/board_blank.png" />
         <br />
       </div>
       <div class="iWrapper">
@@ -23,48 +25,42 @@
         </p>
         <p class="instructions">
           A player must play in the quadrant that corresponds to the square in
-          which their opponent played on their last move.
+          which their opponent played on their last move (as seen below).
         </p>
         <br />
-        <img
-          class="iImg"
-          src="https://upload.wikimedia.org/wikipedia/commons/3/36/Ultimate_tic-tac-toe_forced_move.png"
-        />
-        <br /><br />
-      </div>
-      <div class="iWrapper">
-        <p class="iSubtitle">Hung boards</p>
-        <p class="instructions">
-          It is possible that a quadrant "navigated to" has no available squares
-          to play in (which would hang the game). In such a case, a new quadrant
-          with available squares is selected.
-        </p>
-        <p class="instructions">
-          The quadrant selected to fix a hung board is always the top-left
-          quadrant (if it has no empty squares either the one to the right of it
-          is selected).
-        </p>
+        <img class="iImg" src="../../assets/img/board_how_to_play_piece.png" />
         <br />
       </div>
       <div class="iWrapper">
         <p class="iSubtitle">Winning quadrants</p>
         <p class="instructions">
           Once a player has successfully won (gotten three-in-a-row) in a
-          quadrant, the quadrant is used strictly for navigation purposes and
-          cannot be re-won.
+          quadrant, the quadrant is no longer valid to be played in.
         </p>
+        <br />
+      </div>
+      <div class="iWrapper">
+        <p class="iSubtitle">Hung boards</p>
+        <p class="instructions">
+          It is possible that a quadrant "navigated to" has no available squares
+          to play in or has already been won. Such a case is called a "hung board".
+          In such a case, the next player can play in any square in any valid 
+          quadrant.
+        </p>
+        <br />
+        <img class="iImg" src="../../assets/img/board_before_hung.png" />
+        <br />
+        <img class="iImg" src="../../assets/img/board_once_hung.png" />
         <br />
       </div>
       <div class="iWrapper">
         <p class="iSubtitle">How to win</p>
         <p class="instructions">
-          A player's end goal in this game is to win 3 of the smaller games in
-          order to form a consecutive line of won games, as seen below.
+          The ultimate objective of the game is to win three of the Tic-Tac-Toe 
+          games; the games won forming a horizontal, vertical, or diagonal line
+          within the larger board context (as seen in the image below).
         </p>
-        <img
-          class="iImg"
-          src="https://upload.wikimedia.org/wikipedia/commons/a/a7/Ultimate_tic-tac-toe_X_victory.png"
-        />
+        <img class="iImg" src="../../assets/img/board_win.png" />
         <br />
         <br />
       </div>

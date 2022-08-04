@@ -71,7 +71,9 @@ export class BoardComponent {
     var stateFlag: number = 1;
 
     stateFlag = this.saveBoardChange(obj, stateFlag);
-    stateFlag = this.changeActiveBoard(obj['sid'], stateFlag);
+    if(stateFlag != 4){ // If state is 4, game is won.
+      stateFlag = this.changeActiveBoard(obj['sid'], stateFlag);
+    }
 
     this.gameTurn++;
     headerMsg = this.getHeaderMessage(obj['pid'], stateFlag);
@@ -106,6 +108,11 @@ export class BoardComponent {
       var isGameWin: boolean = this.checkGameWinCondition(obj['pid']);
       if (isGameWin) {
         flag = 4; // Flag 4 means a player won the game
+      }
+    }else{
+      // Check for cat's game and save it
+      if(this.checkCatsGame(obj['qid'])){
+        this.tttWins[obj['qid']] = -1;
       }
     }
     return flag;
@@ -160,6 +167,18 @@ export class BoardComponent {
     return isWin;
   }
 
+  // Checks for a cat's game in any given quadrant
+  checkCatsGame(quadrant: number){
+    // Check if any squares are empty
+    // (We verified in saveBoardChange that it wasn't a win)
+    for(var i: number = 0; i < this.boardState[quadrant].length; i++){
+      if(this.boardState[quadrant][i] == 0){
+        return false; // not a cat's game if there's still a square
+      }
+    }
+    return true; 
+  }
+
   /**
    * CHANGEACTIVEBOARD() and associated functions
    */
@@ -167,44 +186,16 @@ export class BoardComponent {
   // checkHungBoard() handles the selection logic.
   changeActiveBoard(squareClicked: number, stateFlag: number): number {
     var flag: number = stateFlag;
-    this.activeBoard = this.checkHungBoard(squareClicked);
 
-    // If the new active board isn't where the user specified, we know it was hung
-    if (this.activeBoard != squareClicked) {
-      flag = 3; // flag 3 means the board was hung
+    // If someone already won this board, the player may play in any valid board
+    if(this.tttWins[squareClicked] != 0){
+      this.activeBoard = -1;
+      flag = 3;
+    }else{
+      this.activeBoard = squareClicked;
     }
 
-    if (this.activeBoard == -1) {
-      flag = 5; // Flag 5 means the entire game board is full
-    }
     return flag;
-  }
-
-  // This checks to see if the board that is being navigated to has any squares available to be clicked on.
-  checkHungBoard(squareClicked: number) {
-    // This is to see if we can get to the intended board
-    for (var i: number = 0; i < this.boardState[squareClicked].length; i++) {
-      if (this.boardState[squareClicked][i] == 0) {
-        return squareClicked;
-      }
-    }
-
-    // If we made it this far then the intended board is full. Find an empty one.
-    return this.findUnhung();
-  }
-
-  // Locates a board with available squares to continue the game
-  // Selection happens in order of left-to-right, top-to-bottom
-  findUnhung() {
-    for (var i: number = 0; i < this.boardState.length; i++) {
-      for (var j: number = 0; j < this.boardState[i].length; j++) {
-        if (this.boardState[i][j] == 0) {
-          return i;
-        }
-      }
-    }
-    // This means the whole board is full
-    return -1;
   }
 
   /**
@@ -261,10 +252,17 @@ export class BoardComponent {
   handleComputerPlay() {
     var cObj: GameCommObj = JSON.parse('{}');
     var cMove: number;
+    var cBoard: number;
     var headerMsg: string;
     var stateFlag: number = 1;
 
-    cMove = this.computer.computerMove(this.boardState[this.activeBoard]);
+    if(this.activeBoard == -1){
+      cBoard = this.computer.computerSelectBoard(this.tttWins);
+      cMove = this.computer.computerMove(this.boardState[cBoard]);
+      this.activeBoard = cBoard;
+    }else{
+      cMove = this.computer.computerMove(this.boardState[this.activeBoard]);
+    }
 
     // Manually create computer JSON
     cObj['sid'] = cMove;
@@ -280,17 +278,6 @@ export class BoardComponent {
 
     if (stateFlag == 4) {
       this.handleEndGame();
-    }
-  }
- 
-  computerMove(ttt: number[]): number {
-    var rando: number;
-    // We have made sure that there's a square for the computer to play in
-    while (true) {
-      rando = Math.floor(Math.random() * 9);
-      if (ttt[rando] == 0) {
-        return rando;
-      }
     }
   }
 }

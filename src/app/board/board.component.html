@@ -6,7 +6,8 @@
         [qid]="col + row * tttBoardsInit.length"
         [gameTurn]="gameTurn"
         [isActive]="
-          col + row * tttBoardsInit.length == activeBoard || activeBoard == -1
+          (col + row * tttBoardsInit.length == activeBoard || activeBoard == -1) && 
+          (tttWins[col + row * tttBoardsInit.length] == 0)
         "
         [whoWon]="tttWins[col + row * tttBoardsInit.length]"
         [computerPlaySquares]="boardState[col + row * tttBoardsInit.length]"
