@@ -1,6 +1,12 @@
 # Extreme Tic Tac Toe
 
-2022/07/29
+## 2022/08/06
+
+Since version 1.0 is complete (and does not require images) I have it hosted on StackBlitz for those interested in playing.
+https://stackblitz.com/edit/angular-ivy-ezg9qu
+
+## 2022/07/29
+
 This is a project I made in July 2022. It took me a bit over a week to get it working.
 
 Instructions on how to play the game can be found in the game itself.
