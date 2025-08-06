@@ -1,15 +1,14 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'game-header',
+  selector: 'header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })
-export class HeaderComponent {
+export class Header {
   @Input() headerMsg: string;
 
   constructor() {
-    this.headerMsg = "";
   }
 
 }

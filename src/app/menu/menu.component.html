@@ -1,21 +1,30 @@
 <div class="menuWrapper">
-    <div class="title">Extreme Tic-Tac-Toe</div>
-    <div class="titleImageDiv">
-      <img
-        class="titleImage"
-        src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Incomplete_Ultimate_Tic-Tac-Toe_Board.png"
-      />
-    </div>
-    <div class="menuButtonWrapper">
-      <button class="btn btnPlayGame" (click)="handlePlayGame()">
-        Play game
-      </button>
-      <button class="btn btnPlayGame" (click)="handlePlayComputer()">
-      Play computer
-    </button>
-      <button class="btn btnInstructions" (click)="handleShowInstructions()">
-        Instructions
-      </button>
-    </div>
-  </div>
-  
+	<div class="title">Extreme Tic-Tac-Toe</div>
+	<div class="titleImageDiv">
+		<img
+			class="titleImage"
+			src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Incomplete_Ultimate_Tic-Tac-Toe_Board.png"
+		/>
+	</div>
+	<div class="menuButtonWrapper" *ngIf="!cpu">
+		<button class="btn btnPlayGame" (click)="handlePlayGame(0)">
+			Play game
+		</button>
+		<button class="btn btnPlayGame" (click)="handleSelectDifficulty()">
+			Play computer
+		</button>
+		<button class="btn btnInstructions" (click)="handleShowInstructions()">
+			Instructions
+		</button>
+	</div>
+	<div class="cpudifficulty" *ngIf="cpu">
+		<div class="title">Select difficulty</div>
+		<div class="menuButtonWrapper">
+			<button class="btn btnPlayGame" (click)="handlePlayGame(1)">Easy</button>
+			<button class="btn btnPlayGame" (click)="handlePlayGame(2)">Hard</button>
+			<button class="btn" (click)="handleSelectDifficulty()">Cancel</button>
+		</div>
+	</div>
+</div>
+
+

@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'game-footer',
+  selector: 'footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css'],
 })
-export class FooterComponent {
+export class Footer {
   @Output() mainMenuEmitter = new EventEmitter();
 
   constructor() {}

@@ -1,6 +1,13 @@
 # Extreme Tic Tac Toe
 
-2022/07/29
+## 2022/08/03
+The rules have been updated now. I have added my own images to the game now (as opposed to using ones hosted on Wikipedia).
+
+I've uploaded version 1.0 of this game to Stackblitz. I would upload this version but they don't allow free accounts to use their own images.
+
+Stackblitz link: https://stackblitz.com/edit/angular-ivy-ezg9qu
+
+## 2022/07/29
 This is a project I made in July 2022. It took me a bit over a week to get it working.
 
 Instructions on how to play the game can be found in the game itself.

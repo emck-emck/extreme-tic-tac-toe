@@ -1,23 +1,29 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-menu',
+  selector: 'menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css'],
 })
-export class MenuComponent {
-  @Output() playGameEmitter = new EventEmitter();
-  @Output() showInstructionsEmitter = new EventEmitter();
+export class Menu {
+	@Output() playGameEmitter = new EventEmitter();
+	@Output() showInstructionsEmitter = new EventEmitter();
 
-  handlePlayGame() {
-    this.playGameEmitter.emit(false);
-  }
+	cpu: boolean;
 
-  handlePlayComputer() {
-    this.playGameEmitter.emit(true);
-  }
+	constructor(){
+		this.cpu = false;
+	}
 
-  handleShowInstructions() {
-    this.showInstructionsEmitter.emit();
-  }
+	handlePlayGame(i: number) {
+		this.playGameEmitter.emit(i);
+	}
+
+	handleSelectDifficulty(){
+		this.cpu = !this.cpu;
+	}
+
+	handleShowInstructions() {
+		this.showInstructionsEmitter.emit();
+	}
 }
