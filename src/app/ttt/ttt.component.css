@@ -1,0 +1,15 @@
+.lWrapper {
+  background-color: darkgray;
+}
+
+.p1Win {
+  background-color: red;
+}
+
+.p2Win {
+  background-color: blue;
+}
+
+.activeTTT {
+  background-color: white;
+}

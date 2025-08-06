@@ -1,19 +1,18 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-game',
+  selector: 'game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css'],
 })
-export class GameComponent {
-  @Input() isComputerPlayer: boolean;
+export class Game {
+  @Input() computerPlayer: number;
   @Output() mainMenuEmitter = new EventEmitter();
 
   headerMsg: string;
 
   constructor() {
     this.headerMsg = "Player 1's turn. Click any square to start.";
-    this.isComputerPlayer = false;
   }
 
   setHeaderMsg(msg: Event) {

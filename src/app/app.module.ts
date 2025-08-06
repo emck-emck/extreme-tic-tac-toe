@@ -1,32 +1,32 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-import { InstructionsComponent } from './instructions/instructions.component';
-import { GameComponent } from './game/game.component';
-import { HeaderComponent } from './header/header.component';
-import { BoardComponent } from './board/board.component';
-import { FooterComponent } from './footer/footer.component';
-import { SquareComponent } from './square/square.component';
-import { QuadrantComponent } from './quadrant/quadrant.component';
+import { Menu } from './menu/menu.component';
+import { Game } from './game/game.component';
+import { Instructions } from './instructions/instructions.component';
+import { Board } from './board/board.component';
+import { Header } from './header/header.component';
+import { Footer } from './footer/footer.component';
+import { TTT } from './ttt/ttt.component';
+import { Square } from './square/square.component';
 
 @NgModule({
+  imports: [BrowserModule, FormsModule],
   declarations: [
     AppComponent,
-    MenuComponent,
-    InstructionsComponent,
-    GameComponent,
-    HeaderComponent,
-    BoardComponent,
-    FooterComponent,
-    SquareComponent,
-    QuadrantComponent
+    Menu,
+    Game,
+    Instructions,
+    Board,
+    Header,
+    Footer,
+    TTT,
+    Square,
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {}
+}
