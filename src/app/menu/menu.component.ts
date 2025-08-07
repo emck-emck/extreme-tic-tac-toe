@@ -9,15 +9,20 @@ export class MenuComponent {
   @Output() playGameEmitter = new EventEmitter();
   @Output() showInstructionsEmitter = new EventEmitter();
 
-  handlePlayGame() {
-    this.playGameEmitter.emit(false);
+  mainMenu: boolean;
+  constructor(){
+	this.mainMenu = true;
   }
 
-  handlePlayComputer() {
-    this.playGameEmitter.emit(true);
+  handlePlayGame(i: number) {
+	this.playGameEmitter.emit(i);
+  }
+
+  handleMenuSwitch(){
+	this.mainMenu = !this.mainMenu;
   }
 
   handleShowInstructions() {
-    this.showInstructionsEmitter.emit();
+	this.showInstructionsEmitter.emit();
   }
 }

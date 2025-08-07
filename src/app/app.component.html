@@ -8,7 +8,7 @@
   <div class="container" *ngIf="activeView == 1">
     <app-game 
     (mainMenuEmitter)="handleMainMenu()" 
-    [isComputerPlayer]="isComputerPlayer"
+    [computerPlayer]="computerPlayer"
     ></app-game>
   </div>
   <div class="container" *ngIf="activeView == 2">

@@ -4,7 +4,7 @@
 import { Component, Output, EventEmitter, Input } from '@angular/core';
 import { GameCommObj } from '../game-comm-obj.interface';
 import { ComputerService } from '../computer/computer.service';
- @Component({
+@Component({
   selector: 'game-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.css'],
@@ -29,7 +29,7 @@ export class BoardComponent {
   gameTurn: number;
   activeBoard: number;
 
-  @Input() isComputerPlayer: boolean;
+  @Input() computerPlayer: number;
   @Output() headerMsg = new EventEmitter();
 
   tttBoardsInit: number[];
@@ -44,7 +44,6 @@ export class BoardComponent {
     this.gameTurn = 0;
     this.tttBoardsInit = [0, 1, 2];
     this.activeBoard = -1;
-    this.isComputerPlayer = false;
 
     // Initialize board state
     this.boardState = new Array(9);
@@ -58,7 +57,7 @@ export class BoardComponent {
     }
 
     // Initialize Computer
-    this.computer = new ComputerService();
+    this.computer = new ComputerService(computerPlayer);
   }
 
   /**
@@ -82,9 +81,7 @@ export class BoardComponent {
     if (stateFlag == 4) {
       this.handleEndGame();
     } else {
-      if (this.isComputerPlayer) {
-        this.handleComputerPlay();
-      }
+      this.handleComputerPlay();
     }
   }
 

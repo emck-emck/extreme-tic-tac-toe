@@ -6,16 +6,24 @@
         src="../../assets/img/menu.png"
       />
     </div>
-    <div class="menuButtonWrapper">
-      <button class="btn btnPlayGame" (click)="handlePlayGame()">
-        Play game
-      </button>
-      <button class="btn btnPlayGame" (click)="handlePlayComputer()">
-      Play computer
-    </button>
-      <button class="btn btnInstructions" (click)="handleShowInstructions()">
-        Instructions
-      </button>
-    </div>
+    <div class="menuButtonWrapper" *ngIf="mainMenu">
+	  <button class="btn btnPlayGame" (click)="handlePlayGame(0)">
+		Play game
+	  </button>
+	  <button class="btn btnPlayGame" (click)="handleMenuSwitch()">
+		Play computer
+ 	  </button>
+	  <button class="btn btnInstructions" (click)="handleShowInstructions()">
+		Instructions
+	  </button>
+	</div>
+	<div class="cpudifficulty" *ngIf="!mainMenu">
+	  <div class="title">Select difficulty</div>
+	  <div class="menuButtonWrapper">
+		<button class="btn btnPlayGame" (click)="handlePlayGame(1)">Easy</button>
+		<button class="btn btnPlayGame" (click)="handlePlayGame(2)">Hard</button>
+		<button class="btn" (click)="handleMenuSwitch()">Cancel</button>
+	  </div>
+	</div>
   </div>
   
