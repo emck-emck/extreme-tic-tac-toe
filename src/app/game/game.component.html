@@ -1,6 +1,10 @@
-<header [headerMsg]="headerMsg"></header>
-<board
+<game-header 
+    [headerMsg]="headerMsg"
+></game-header>
+<game-board
   (headerMsg)="setHeaderMsg($event)"
-  [computerPlayer]="computerPlayer"
-></board>
-<footer (mainMenuEmitter)="handleMainMenu()"></footer>
+  [isComputerPlayer]="isComputerPlayer"
+></game-board>
+<game-footer 
+    (mainMenuEmitter)="handleMainMenu()"
+></game-footer>

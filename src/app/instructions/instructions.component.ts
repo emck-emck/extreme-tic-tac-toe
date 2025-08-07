@@ -1,11 +1,11 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'instructions',
+  selector: 'app-instructions',
   templateUrl: './instructions.component.html',
   styleUrls: ['./instructions.component.css'],
 })
-export class Instructions {
+export class InstructionsComponent {
   @Output() backToMenuEmitter = new EventEmitter();
   constructor() {}
 

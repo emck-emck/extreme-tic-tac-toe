@@ -7,13 +7,13 @@
 >
   <tr *ngFor="let row of boardInit">
     <td *ngFor="let col of boardInit">
-      <square
+      <quadrant-square
         [id]="col + row * boardInit.length"
         [isActive]="isActive"
         [gameTurn]="gameTurn"
         [computerPlay]="computerPlaySquares[col + row * boardInit.length] == 2"
         (squareClickListener)="handleSquareClick($event)"
-      ></square>
+      ></quadrant-square>
     </td>
   </tr>
 </table>
