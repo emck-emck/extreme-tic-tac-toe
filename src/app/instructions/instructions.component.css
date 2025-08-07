@@ -1,35 +1,36 @@
 .instructionsMenuWrapper {
-  border-color: black;
-  border-style: double;
-  padding: 5px;
-  margin: 0 auto;
-  width: 500px;
-}
-
-.buttonWrapper {
-  text-align: center;
-}
-
-.iTitle {
-  font-size: larger;
-  font-weight: bolder;
-  text-align: center;
-}
-
-.iSubtitle {
-  font-size: large;
-  font-weight: bold;
-}
-
-.iImg {
-  height: 500px;
-  width: 500px;
-}
-
-p {
-  font-family: monospace;
-}
-
-button {
-  font-family: monospace;
-}
+    border-color: black;
+    border-style: double;
+    padding: 5px;
+    margin: 0 auto;
+    width: 500px;
+  }
+  
+  .buttonWrapper {
+    text-align: center;
+  }
+  
+  .iTitle {
+    font-size: larger;
+    font-weight: bolder;
+    text-align: center;
+  }
+  
+  .iSubtitle {
+    font-size: large;
+    font-weight: bold;
+  }
+  
+  .iImg {
+    height: 520px;
+    width: 500px;
+  }
+  
+  p {
+    font-family: monospace;
+  }
+  
+  button {
+    font-family: monospace;
+  }
+  

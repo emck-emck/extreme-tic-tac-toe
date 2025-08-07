@@ -1,14 +1,19 @@
 <div class="allContainer">
   <div class="container" *ngIf="activeView == 0">
-    <menu
+    <app-menu
       (playGameEmitter)="handleMenuPlayGame($event)"
       (showInstructionsEmitter)="handleShowInstructions()"
-    ></menu>
+    ></app-menu>
   </div>
   <div class="container" *ngIf="activeView == 1">
-    <game (mainMenuEmitter)="handleMainMenu()" [computerPlayer]="computerPlayer"></game>
+    <app-game 
+    (mainMenuEmitter)="handleMainMenu()" 
+    [isComputerPlayer]="isComputerPlayer"
+    ></app-game>
   </div>
   <div class="container" *ngIf="activeView == 2">
-    <instructions (backToMenuEmitter)="handleMainMenu()"></instructions>
+    <app-instructions 
+    (backToMenuEmitter)="handleMainMenu()"
+    ></app-instructions>
   </div>
 </div>
