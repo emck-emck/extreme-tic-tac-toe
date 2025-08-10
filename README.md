@@ -1,5 +1,41 @@
 # Extreme Tic Tac Toe
 
+## 2025/08/09
+I am looking at this game for the first time in a year or so. I worked on it somewhat last year, in an offline place, then added it to my website. Now that I'm interested in adding changes in as table build environment, I am very confused at the way I coded this game.
+
+I'm taking the time now to try and outline the Angular flow I used.
+
+App is the root document, in terms of HTML and TS.
+
+The structure is:
+                                APP
+                                 |
+                         ------------------
+                         |       |        |
+                       Menu    Game     Instructions
+                                 |
+                         ------------------
+                         |       |        |
+                       Header  Board     Footer
+                                 |
+                                 |
+                              Quadrant
+                                 |
+                                 |
+                              Square
+
+There is also a ComputerService that is meant to govern the AI logic of playing against a computer.
+
+As of now, the main game logic is handled in the Board class (which I think should be handled in the Game class).
+
+In terms of variables, communication is done between components using JSON.
+The primary JSON variables are:
+-sid (Square ID)
+-qid (Quadrant ID)
+-pid (Player ID)
+
+There is a high-level variable to track whose turn it is.
+
 ## 2022/08/03
 The rules have been updated now. I have added my own images to the game now (as opposed to using ones hosted on Wikipedia).
 

@@ -7,13 +7,13 @@
   </div>
   <div class="container" *ngIf="activeView == 1">
     <app-game 
-    (mainMenuEmitter)="handleMainMenu()" 
-    [isComputerPlayer]="isComputerPlayer"
+	  (mainMenuEmitter)="handleMainMenu()" 
+      [computerPlayer]="computerPlayer"
     ></app-game>
   </div>
   <div class="container" *ngIf="activeView == 2">
     <app-instructions 
-    (backToMenuEmitter)="handleMainMenu()"
+      (backToMenuEmitter)="handleMainMenu()"
     ></app-instructions>
   </div>
 </div>
