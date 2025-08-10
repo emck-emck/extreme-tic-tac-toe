@@ -17,8 +17,8 @@ export class ComputerService {
     [2, 4, 6],
   ];
 
-  constructor(d) {
-    this.difficulty = d;
+  constructor() {
+    this.difficulty = -1;
   }
 
   public computerSelectBoard(boardState: number[]): number{

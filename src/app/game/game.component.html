@@ -2,8 +2,12 @@
     [headerMsg]="headerMsg"
 ></game-header>
 <game-board
-  (headerMsg)="setHeaderMsg($event)"
+  [activeBoard]="activeBoard"
+  [boardState]="boardState"
   [computerPlayer]="computerPlayer"
+  [gameTurn]="gameTurn"
+  [qWins]="qWins"
+  (squareClickListener)="handleSquareClick($event)"
 ></game-board>
 <game-footer 
     (mainMenuEmitter)="handleMainMenu()"
