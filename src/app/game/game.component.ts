@@ -52,6 +52,10 @@ export class GameComponent {
 	this.computer.difficulty = this.computerPlayer;
   }
 
+  ngOnInit(){
+    this.computer.difficulty = this.computerPlayer;
+  }
+
   /**
    * Main action listener function
    * Pretty much the entry point to any code run in this component
@@ -207,7 +211,8 @@ export class GameComponent {
    * HANDLECOMPUTERPLAY and associated functions
    */
   handleComputerPlay() {
-    var cObj: GameCommObj = JSON.parse('{}');
+    var cIn: GameCommObj;
+    var cOut: GameCommObj = JSON.parse('{}');
     var cMove: number;
     var cBoard: number;
     var headerMsg: string;
@@ -216,31 +221,28 @@ export class GameComponent {
 	if (this.computer.difficulty == 0){
 		return;
 	}
-    /*
+    
     if(this.activeBoard == -1){
-      cBoard = this.computer.computerSelectBoard(this.tttWins);
-      cMove = this.computer.computerMove(this.boardState[cBoard]);
-      this.activeBoard = cBoard;
+      cIn = this.computer.computerMoveBoard(this.qWins, this.boardState);
     }else{
-      cMove = this.computer.computerMove(this.boardState[this.activeBoard]);
+      cIn = this.computer.computerMove(this.boardState[this.activeBoard], this.activeBoard);
     }
 
     // Manually create computer JSON
-    cObj['sid'] = cMove;
-    cObj['qid'] = this.activeBoard;
-    cObj['pid'] = 2;
+    cOut['qid'] = cIn['qid'];
+    cOut['sid'] = cIn['sid'];
+    cOut['pid'] = 2;
 
-    stateFlag = this.saveBoardChange(cObj, stateFlag);
-    stateFlag = this.changeActiveBoard(cMove, stateFlag);
+    stateFlag = this.saveBoardChange(cOut);
+    stateFlag = this.changeActiveBoard(cOut['sid'], stateFlag);
 
-    this.gameTurn++;
-    headerMsg = this.getHeaderMessage(cObj['pid'], stateFlag);
-    this.headerMsg.emit(headerMsg);
-
+    this.headerMsg = this.getHeaderMessage(stateFlag);
+    
     if (stateFlag == 4) {
       this.handleEndGame();
+    }else{
+      this.gameTurn++;
     }
-    */
   }
 
 

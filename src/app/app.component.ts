@@ -24,8 +24,8 @@
    }
  
    handleMenuPlayGame(e: Event) {
-     this.activeView = 1;
      this.computerPlayer = Number(e);
+     this.activeView = 1;
    }
  
    handleShowInstructions() {

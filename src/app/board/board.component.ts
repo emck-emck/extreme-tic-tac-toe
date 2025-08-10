@@ -23,7 +23,6 @@ export class BoardComponent {
   @Input() boardState!: number[][];
   @Input() qWins!: number[];
   @Input() activeBoard!: number;
-  @Input() computerPlayer!: number;
   @Input() gameTurn!: number;
   @Output() squareClickListener = new EventEmitter();
 
