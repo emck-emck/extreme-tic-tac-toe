@@ -67,29 +67,35 @@ export class ComputerService {
 
     pcMove['qid'] = playedQ;
 
-    var ans: number;
 	if(this.difficulty == 1){ // Level one plays random squares
       var vSquares: number[] = this.findValidSquares(q);
       var rando: number = Math.floor(Math.random() * vSquares.length);
       pcMove['sid'] = vSquares[rando];
+      return pcMove;
 	}else if(this.difficulty == 2){
       var s: number;
 	  // Check for immediate wins
 	  s = this.l2cw(q, 2);
 	  if(s != -1){
+        console.log(`Found winning line, playing ${s}`);
         pcMove['sid'] = s;
+        return pcMove;
       }
 
 	  // Check for immediate losses
 	  s = this.l2cw(q, 1);
 	  if(s != -1){
+        console.log(`Blocking winning line, playing ${s}`);
         pcMove['sid'] = s;
+        return pcMove;
       }
 
 	  // Play advantageous square if none of the above found
       s = this.l2as(q);
       if(s != -1){
+        console.log(`Advantageous square, playing ${s}`);
         pcMove['sid'] = s;
+        return pcMove;
       }else{ // This is an error condition
         var obj: GameCommObj = JSON.parse('{}');
         obj['qid'] = -1;
@@ -102,8 +108,6 @@ export class ComputerService {
       obj['sid'] = -1;
       return obj;
     }
-
-    return pcMove
   }
 
 

@@ -7,22 +7,23 @@
       />
     </div>
     <div class="menuButtonWrapper" *ngIf="mainMenu">
-	  <button class="btn btnPlayGame" (click)="handlePlayGame(0)">
+	  <button class="btnMain btnPlayGame" (click)="handlePlayGame(0)">
 		Play game
 	  </button>
-	  <button class="btn btnPlayGame" (click)="handleMenuSwitch()">
+	  <button class="btnMain btnPlayGame" (click)="handleMenuSwitch()">
 		Play computer
  	  </button>
-	  <button class="btn btnInstructions" (click)="handleShowInstructions()">
+	  <button class="btnMain btnInstructions" (click)="handleShowInstructions()">
 		Instructions
 	  </button>
 	</div>
 	<div class="cpudifficulty" *ngIf="!mainMenu">
 	  <div class="title">Select difficulty</div>
 	  <div class="menuButtonWrapper">
-		<button class="btn btnPlayGame" (click)="handlePlayGame(1)">Easy</button>
-		<button class="btn btnPlayGame" (click)="handlePlayGame(2)">Hard</button>
-		<button class="btn" (click)="handleMenuSwitch()">Cancel</button>
+		<button class="btnDifficulty btnPlayGame" (click)="handlePlayGame(1)">Easy</button>
+		<button class="btnDifficulty btnPlayGame" (click)="handlePlayGame(2)">Medium</button>
+		<button class="btnDifficulty btnPlayGame" (click)="handlePlayGame(3)">Hard</button>
+		<button class="btnDifficulty" (click)="handleMenuSwitch()">Cancel</button>
 	  </div>
 	</div>
   </div>

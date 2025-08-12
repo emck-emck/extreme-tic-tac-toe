@@ -27,10 +27,17 @@
     background-color: gray;
   }
   
-  .btn {
+  .btnMain {
     background-color: gray;
     font-weight: bold;
     font-family: monospace;
     width: 33.333%;
+  }
+
+  .btnDifficulty {
+    background-color: gray;
+    font-weight: bold;
+    font-family: monospace;
+    width: 25%;
   }
   
