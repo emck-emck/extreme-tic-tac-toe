@@ -1,18 +1,18 @@
 <!--qInit is an array = [0,1,2] which is used strictly for this initialization-->
 <table class="wrapper">
-    <tr *ngFor="let row of qInit">
-      <td *ngFor="let col of qInit">
-        <board-quadrant
-        [qid]="col + row * qInit.length"
-        [gameTurn]="gameTurn"
-        [isActive]="
-          (col + row * qInit.length == activeBoard || activeBoard == -1) && 
-          (qWins[col + row * qInit.length] == 0)
-        "
-        [whoWon]="qWins[col + row * qInit.length]"
-        [computerPlaySquares]="boardState[col + row * qInit.length]"
-        (squareClickListener)="handleSquareClick($event)"
-      ></board-quadrant>
-      </td>
-    </tr>
-  </table>
+  <tr *ngFor="let row of qInit">
+    <td *ngFor="let col of qInit">
+      <board-quadrant
+      [qid]="col + row * qInit.length"
+      [gameTurn]="gameTurn"
+      [isActive]="
+        (col + row * qInit.length == activeBoard || activeBoard == -1) && 
+        (qWins[col + row * qInit.length] == 0)
+      "
+      [whoWon]="qWins[col + row * qInit.length]"
+      [computerPlaySquares]="boardState[col + row * qInit.length]"
+      (squareClickListener)="handleSquareClick($event)"
+    ></board-quadrant>
+    </td>
+  </tr>
+</table>

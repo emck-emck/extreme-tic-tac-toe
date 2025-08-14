@@ -1,9 +1,8 @@
 .header {
-    text-align: center;
-    font-weight: bold;
-    font-family: monospace;
-    border-style: solid solid none solid;
-    border-color: black;
-    border-width: 3px;
-  }
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 18px;
+  width: 100%;
+}
   

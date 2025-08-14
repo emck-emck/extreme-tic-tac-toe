@@ -71,11 +71,22 @@ export class GameComponent {
     
     this.headerMsg = this.getHeaderMessage(stateFlag);
 
-    if (stateFlag == 4) {
+    if (stateFlag == 4) { // If game is won
       this.handleEndGame();
-    } else {
-      this.gameTurn++;
-      this.handleComputerPlay();
+    } else { // If game is still going
+      stateFlag = this.checkCatsGame(this.qWins); // Check for cat's game
+      if(stateFlag){
+        this.headerMsg = this.getHeaderMessage(stateFlag);
+        this.handleEndGame();
+      }else{ // If game is still going
+        this.gameTurn++;
+        this.handleComputerPlay(); // Play PC move
+        stateFlag = this.checkCatsGame(this.qWins);
+        if(stateFlag){ // Check cat's game for PC move
+          this.headerMsg = this.getHeaderMessage(stateFlag);
+          this.handleEndGame();
+        }
+      }
     }
   }
 
@@ -138,15 +149,14 @@ export class GameComponent {
   }
 
   // Checks for a cat's game in any given quadrant
-  checkCatsGame(board: number[]){
+  checkCatsGame(board: number[]): number{
     // Check if any squares are empty
-    // (We verified in saveBoardChange that the board was never won)
     for(var i: number = 0; i < board.length; i++){
       if(board[i] == 0){
-        return false; // not a cat's game if there's still a square
+        return 0; // not a cat's game if there's still an unlocked square
       }
     }
-    return true; 
+    return 5; 
   }
 
 
@@ -225,7 +235,7 @@ export class GameComponent {
     if(this.activeBoard == -1){
       cIn = this.computer.computerMoveBoard(this.qWins, this.boardState);
     }else{
-      cIn = this.computer.computerMove(this.boardState[this.activeBoard], this.activeBoard);
+      cIn = this.computer.computerMove(this.boardState[this.activeBoard], this.qWins, this.activeBoard);
     }
 
     // Manually create computer JSON
@@ -234,7 +244,9 @@ export class GameComponent {
     cOut['pid'] = 2;
 
     stateFlag = this.saveBoardChange(cOut);
-    stateFlag = this.changeActiveBoard(cOut['sid'], stateFlag);
+    if(stateFlag != 4){
+      stateFlag = this.changeActiveBoard(cOut['sid'], stateFlag);
+    }
 
     this.headerMsg = this.getHeaderMessage(stateFlag);
     

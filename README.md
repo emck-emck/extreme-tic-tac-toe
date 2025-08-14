@@ -1,5 +1,13 @@
 # Extreme Tic Tac Toe
 
+## 2025/08/14
+I've done some work on the game, I'm putting it to bed now for a little bit.
+
+The command to compile the code is "ng build"
+The command to serve a test environment is "ng serve"
+
+The next step in this project would be to make a repetitive learning AI, which I'm sure would trump any I've made so far. In this case, level 2 AI would be replaced by level 3, and the RL AI would become the new level 3.
+
 ## 2025/08/09
 I am looking at this game for the first time in a year or so. I worked on it somewhat last year, in an offline place, then added it to my website. Now that I'm interested in adding changes in as table build environment, I am very confused at the way I coded this game.
 
