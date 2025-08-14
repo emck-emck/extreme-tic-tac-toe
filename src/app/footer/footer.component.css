@@ -1,11 +1,13 @@
 .footerContainer {
-    background-color: gray;
-    border-color: black;
-    border-style: none solid solid solid;
-    text-align: center;
-  }
-  .btn{
-    background-color: gray;
-    font-weight: bold;
-    width: 50%;
-  }
+  background-color: gray;
+  border-color: black;
+  border-style: none solid solid solid;
+  text-align: center;
+}
+.btn{
+  border-color: black;
+  border-style: none solid none solid;
+  background-color: gray;
+  font-weight: bold;
+  width: 50%;
+}

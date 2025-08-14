@@ -1,15 +1,30 @@
 .allContainer {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    height: fit-content;
-    margin: 0 auto;
-    width: fit-content;
-  }
-  
-  body {
-    margin-left: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: fit-content;
+  margin: 0 auto;
+
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+
+  /* Make the parent a square that fits in the screen */
+  width: min(85vw, 85vh);
+
+  display: flex;
+  flex-direction: column;  /* stack items vertically */
+  justify-content: center; /* horizontal center */
+  align-items: center;     /* vertical center */
+}
+
+body {
+  margin-left: 0;
+  padding: 0;
+}
+
+app-game {
+  width: 100%;
+}

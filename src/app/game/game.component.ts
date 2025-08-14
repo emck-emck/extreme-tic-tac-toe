@@ -235,7 +235,7 @@ export class GameComponent {
     if(this.activeBoard == -1){
       cIn = this.computer.computerMoveBoard(this.qWins, this.boardState);
     }else{
-      cIn = this.computer.computerMove(this.boardState[this.activeBoard], this.activeBoard);
+      cIn = this.computer.computerMove(this.boardState[this.activeBoard], this.qWins, this.activeBoard);
     }
 
     // Manually create computer JSON
