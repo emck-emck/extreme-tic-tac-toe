@@ -5,6 +5,7 @@ I've done some work on the game, I'm putting it to bed now for a little bit.
 
 The command to compile the code is "ng build"
 The command to serve a test environment is "ng serve"
+The command to compile for my website is "ng build --configuration production --base-href /extreme_tic_tac_toe/"
 
 The next step in this project would be to make a repetitive learning AI, which I'm sure would trump any I've made so far. In this case, level 2 AI would be replaced by level 3, and the RL AI would become the new level 3.
 
